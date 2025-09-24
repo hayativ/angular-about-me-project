@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+.section-padding {
+    padding: 60px 0;
+}
+body {
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    background: #3e2bc5;
+    overflow-x: hidden;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* 06.START ABOUT DETAILS DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.about-details{}
+.single_about_details{}
+@media only screen and (max-width:768px) { 
+.single_about_details{padding-bottom: 60px;}
+}
+.single_about_details h3{
+color: #fff;
+font-size: 45px;
+line-height: 50px;
+margin: 0;
+font-weight: 500;
+}
+.single_about_details span{
+background: #00bcd4 none repeat scroll 0 0;
+display: block;
+height: 3px;
+margin: 20px 0;
+width: 70px;
+border-radius: 3px;	
+}
+.mb20{font-weight: 500;
+margin-bottom: 20px;}
+.single_about_details p{}
+.single_about_details_img{text-align: center;}
+.single_about_details_img img{display: inline-block;}
+/*
+* ----------------------------------------------------------------------------------------
+* 06.END ABOUT DETAILS DESIGN
+* ----------------------------------------------------------------------------------------
+*/
