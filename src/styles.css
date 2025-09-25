@@ -19,8 +19,9 @@ body {
 * 06.START ABOUT DETAILS DESIGN
 * ----------------------------------------------------------------------------------------
 */
-.about-details{}
+/*.about-details{}
 .single_about_details{}
+*/
 @media only screen and (max-width:768px) { 
 .single_about_details{padding-bottom: 60px;}
 }
@@ -41,7 +42,7 @@ border-radius: 3px;
 }
 .mb20{font-weight: 500;
 margin-bottom: 20px;}
-.single_about_details p{}
+/*.single_about_details p{}*/
 .single_about_details_img{text-align: center;}
 .single_about_details_img img{display: inline-block;}
 /*
