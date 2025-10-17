@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   template: `
+    <!-- Interpolation -->
     <h1>{{ title }}</h1>
     <p>{{ mission }}</p>
 
