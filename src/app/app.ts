@@ -2,45 +2,15 @@ import 'zone.js';
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { CharacterListComponent } from './heroes-list/heroes-list'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    CharacterListComponent 
-  ],
-  template: `
-    <h1>{{ title }}</h1>
-    <p>{{ mission }}</p>
-
-    <img [src]="photoUrl" alt="Team photo" width="250" />
-
-    <div>
-      <button (click)="like()">Like</button>
-      <p>Likes: {{ likes }}</p>
-
-      <button (click)="toggleMessage()">Toggle Message</button>
-      <p>{{ message }}</p>
-    </div>
-
-    <div>
-      <input [(ngModel)]="name" placeholder="Enter your name" />
-      <p>Hello, {{ name }}!</p>
-
-      <input [(ngModel)]="email" placeholder="Enter your email" />
-      <button (click)="subscribe()">Subscribe</button>
-      <p>{{ subscribeMessage }}</p>
-    </div>
-
-    <hr />
-    <app-character-list></app-character-list>
-  `,
+  imports: [CommonModule, FormsModule, HttpClientModule],
+  templateUrl: './app.html',
+  styleUrls: ['./app.css']
 })
 export class App {
   title = 'About Our Team';
@@ -52,6 +22,9 @@ export class App {
   name = '';
   email = '';
   subscribeMessage = '';
+  products: any[] = [];
+
+  constructor(private http: HttpClient) {}
 
   like() {
     this.likes++;
@@ -65,6 +38,20 @@ export class App {
     if (this.email) {
       this.subscribeMessage = `Thanks, ${this.email}! Let's be in touch`;
     }
+  }
+
+  loadCharacters() {
+    const url =
+      'https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,image_id,date_display&page=1&limit=5';
+    this.http.get<any>(url).subscribe(response => {
+      this.products = response.data;
+    });
+  }
+
+  getImageUrl(imageId: string): string {
+    return imageId
+      ? `https://www.artic.edu/iiif/2/${imageId}/full/843,/0/default.jpg`
+      : '';
   }
 }
 

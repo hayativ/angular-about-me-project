@@ -1,0 +1,46 @@
+<h1>{{ title }}</h1>
+<p>{{ mission }}</p>
+
+<img [src]="photoUrl" alt="Team photo" width="250" />
+
+<div>
+  <button (click)="like()">Like</button>
+  <p>Likes: {{ likes }}</p>
+
+  <button (click)="toggleMessage()">Toggle Message</button>
+  <p>{{ message }}</p>
+</div>
+
+<div>
+  <input [(ngModel)]="name" placeholder="Enter your name" />
+  <p>Hello, {{ name }}!</p>
+
+  <input [(ngModel)]="email" placeholder="Enter your email" />
+  <button (click)="subscribe()">Subscribe</button>
+  <p>{{ subscribeMessage }}</p>
+</div>
+
+<hr />
+
+<h2>Art Institute of Chicago Artworks</h2>
+<button (click)="loadCharacters()">Load Artworks</button>
+
+<ul *ngIf="products.length > 0; else noData">
+  <li *ngFor="let art of products">
+    <img
+      [src]="getImageUrl(art.image_id)"
+      alt="{{ art.title }}"
+      width="80"
+      height="80"
+    />
+    <div>
+      <strong>{{ art.title }}</strong><br />
+      <em>{{ art.artist_display }}</em><br />
+      <small>{{ art.date_display }}</small>
+    </div>
+  </li>
+</ul>
+
+<ng-template #noData>
+  <p>No artworks yet. Click "Load Artworks".</p>
+</ng-template>

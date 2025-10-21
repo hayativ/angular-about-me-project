@@ -1,0 +1,61 @@
+h1 {
+  color: darkslategray;
+}
+
+h2 {
+  color: black;
+  margin-top: 20px;
+}
+
+img {
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: royalblue;
+}
+
+input {
+  margin: 5px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 400px;
+  border: 1px solid ghostwhite;
+  border-radius: 10px;
+  background: whitesmoke;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-bottom: 1px solid ghostwhite;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+ul img {
+  border-radius: 10px;
+  border: 1px solid ghostwhite;
+  object-fit: cover;
+}
